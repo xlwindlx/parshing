@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>이수구분 : </strong>
+  <%= @normal.div %>
+</p>
+
+<p>
+  <strong>과목명 : </strong>
+  <%= @normal.title %>
+</p>
+
+<p>
+  <strong>학점 : </strong>
+  <%= @normal.grades %>
+</p>
+
+<p>
+  <strong>요일 : </strong>
+  <%= @normal.day %>
+</p>
+
+<p>
+  <strong>시간 : </strong>
+  <%= @normal.time %>
+</p>
+
+<p>
+  <strong>교강사 : </strong>
+  <%= @normal.prof %>
+</p>
+
+<p>
+  <strong>강의실 : </strong>
+  <%= @normal.classroom %>
+</p>
+
+<%= link_to '수정하기', edit_normal_path(@normal) %> |
+<%= link_to '뒤로가기', normals_path %>

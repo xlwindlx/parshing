@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  div: MyString
+  title: MyString
+  grades: MyString
+  day: MyString
+  time: MyString
+  prof: MyString
+  classroom: MyString
+
+two:
+  div: MyString
+  title: MyString
+  grades: MyString
+  day: MyString
+  time: MyString
+  prof: MyString
+  classroom: MyString

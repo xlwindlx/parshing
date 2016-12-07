@@ -1,0 +1,1 @@
+json.array! @normals, partial: 'normals/normal', as: :normal

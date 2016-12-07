@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>이수구분 : </strong>
+  <%= @prof.div %>
+</p>
+
+<p>
+  <strong>과목명 : </strong>
+  <%= @prof.title %>
+</p>
+
+<p>
+  <strong>학년 : </strong>
+  <%= @prof.grade %>
+</p>
+
+<p>
+  <strong>학점 : </strong>
+  <%= @prof.grades %>
+</p>
+
+<p>
+  <strong>전공명 : </strong>
+  <%= @prof.subject %>
+</p>
+
+<p>
+  <strong>교강사 : </strong>
+  <%= @prof.proffesion %>
+</p>
+
+<p>
+  <strong>요일 : </strong>
+  <%= @prof.day %>
+</p>
+
+<p>
+  <strong>시간 : </strong>
+  <%= @prof.time %>
+</p>
+
+<p>
+  <strong>강의실 : </strong>
+  <%= @prof.classroom %>
+</p>
+
+<%= link_to '수정하기', edit_prof_path(@prof) %> |
+<%= link_to '뒤로가기', profs_path %>
