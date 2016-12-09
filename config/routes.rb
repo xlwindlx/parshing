@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'home/main'
-
+  get 'home/search'
+  post "home/search"
+  
   resources :profs
   resources :normals
   # The priority is based upon order of creation: first created -> highest priority.

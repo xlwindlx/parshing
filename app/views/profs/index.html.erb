@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>16년도 2학기 전공</h1>
+<h2 style="text-align:center;">전공과목 시간표</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Div</th>
-      <th>Title</th>
-      <th>Grade</th>
-      <th>Grades</th>
-      <th>Subject</th>
-      <th>Proffesion</th>
-      <th>Day</th>
-      <th>Time</th>
-      <th>Classroom</th>
+      <th>이수구분</th>
+      <th>과목명</th>
+      <th>학년</th>
+      <th>학점</th>
+      <th>전공명</th>
+      <th>교강사</th>
+      <th>요일/시간</th>
+      <th>강의실</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,13 +22,12 @@
       <tr>
         <td><%= prof.div %></td>
         <td><%= prof.title %></td>
-        <td><%= prof.grade %></td>
-        <td><%= prof.grades %></td>
-        <td><%= prof.subject %></td>
-        <td><%= prof.proffesion %></td>
-        <td><%= prof.day %></td>
+        <td style="text-align:center;"><%= prof.grade %></td>
+        <td style="text-align:center;"><%= prof.grades %></td>
+        <td style="text-align:center;"><%= prof.subject %></td>
+        <td style="text-align:center;"><%= prof.proffesion %></td>
         <td><%= prof.time %></td>
-        <td><%= prof.classroom %></td>
+        <td style="text-align:center;"><%= prof.classroom %></td>
         <td><%= link_to '자세히 보기', prof %></td>
         <td><%= link_to '수정', edit_prof_path(prof) %></td>
         <td><%= link_to '삭제', prof, method: :delete, data: { confirm: '삭제할까요?' } %></td>

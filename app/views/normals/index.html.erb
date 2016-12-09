@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>16년도 2학기 교양</h2>
+<h2 style="text-align:center;">교양과목 시간표</h2>
 
 <table>
   <thead>
@@ -9,26 +9,29 @@
       <th>과목명</th>
       <th>학점</th>
       <th>교강사</th>
-      <th>요일</th>
-      <th>시간</th>
+      <th>요일/시간</th>
       <th>강의실</th>
-      <th colspan="3">비고</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @normals.each do |normal| %>
+    <% @normals.each do |n| %>
       <tr>
-        <td><%= normal.div %></td>
-        <td><%= normal.title %></td>
-        <td><%= normal.grades %></td>
-        <td><%= normal.prof %></td>
-        <td><%= normal.day %></td>
-        <td><%= normal.time %></td>
-        <td><%= normal.classroom %></td>
-        <td><%= link_to '자세히 보기', normal %></td>
-        <td><%= link_to '수정', edit_normal_path(normal) %></td>
-        <td><%= link_to '삭제', normal, method: :delete, data: { confirm: '삭제할까요?' } %></td>
+        <td><%= n.div %></td>
+        <td><%= n.title %></td>
+        <td style="text-align:center;"><%= n.grades %></td>
+        <td style="text-align:center;"><%= n.prof %></td>
+        <td><%= n.time %></td>
+        <td style="text-align:center;"><%= n.classroom %></td>
+        <td><%= link_to '자세히 보기', n %></td>
+        <td><%= link_to '수정', edit_normal_path(n) %></td>
+        <td><%= link_to '삭제', n, method: :delete, data: { confirm: '삭제할까요?' } %></td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
       </tr>
     <% end %>
   </tbody>

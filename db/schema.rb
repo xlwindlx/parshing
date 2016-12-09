@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20161204145558) do
     t.string   "div"
     t.string   "title"
     t.integer  "grades"
-    t.string   "day"
     t.string   "time"
     t.string   "prof"
     t.string   "classroom"
+    t.string   "validation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20161204145558) do
     t.integer  "grade"
     t.string   "subject"
     t.string   "proffesion"
-    t.string   "day"
     t.string   "time"
     t.string   "classroom"
+    t.string   "validation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
