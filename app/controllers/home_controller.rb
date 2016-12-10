@@ -1,9 +1,13 @@
 class HomeController < ApplicationController
-  def main
+  def index
     
   end
   
-  def search
-    
+  def show
+    q = params[:q]
+    @todos = []
+    if q.present?
+      @todos = Normal.search(q)
+    end
   end
 end

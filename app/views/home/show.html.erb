@@ -1,0 +1,14 @@
+<form action='/' method='get'>
+  <input type='text' name='q'>
+  <input type='submit'>
+</form>
+
+<% if @todos.any? %>
+<ul>
+  <% @todos.each do | todo | %>
+    <li><%= todo.title %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<hr>

@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/main'
-  get 'home/search'
-  post "home/search"
-  
+  resources :home
   resources :profs
   resources :normals
+  root "home#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,12 +1,11 @@
 class NormalsController < ApplicationController
   before_action :set_normal, only: [:show, :edit, :update, :destroy]
-
   # GET /normals
   # GET /normals.json
   def index
     @normals = Normal.all
   end
-
+  
   # GET /normals/1
   # GET /normals/1.json
   def show
