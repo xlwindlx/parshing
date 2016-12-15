@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass'
+gem 'simple_form'
+
 gem 'rails_12factor', :group => :production
 gem 'pg', :group => :production
 gem 'whenever'

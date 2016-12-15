@@ -33,9 +33,13 @@
         <td><%= link_to '삭제', prof, method: :delete, data: { confirm: '삭제할까요?' } %></td>
       </tr>
     <% end %>
+    <tr>
+      <td colspan="11" style="text-align:center;">
+        <h2><strong><%= link_to '과목 추가하기', new_normal_path %></strong></h2>
+      </td>
+    </tr>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to '추가하기', new_prof_path %>

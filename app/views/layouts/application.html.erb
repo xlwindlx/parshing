@@ -5,29 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <style>
-  table
-  {
-    margin-left:auto;
-    margin-right:auto;
-    padding: 5px;
-  }
-  th
-  {
-    text-align : center;
-  }
-  body
-  {
-    /*color:white;*/
-    /*background-image: url("http://cfile236.uf.daum.net/image/2076B43F4DA9CA731471F3");*/
-    background-repeat: no-repeat;
-    background-size:100%;  
-    
-  }
-  </style>
+  
   <!--현재시간 찍기-->
   <script type = "text/javascript">
     setInterval("dpTime()",1000);
@@ -53,6 +31,56 @@
       }
       document.getElementById("dpTime").innerHTML = month + "월 " + day + "일 " + ampm + hours + ":" + minutes;
     }
+    
+    // 체크박스 메소드
+    function checkdiv(divs)
+    {
+       if (divs.divtext.disabled==true)
+          divs.divtext.disabled=false
+       else
+        divs.divtext.disabled=true
+    }
+
+    function checktitle(titles)
+    {
+       if (titles.titletext.disabled==true)
+        titles.titletext.disabled=false
+       else
+        titles.titletext.disabled=true
+    }
+
+    function checkgrades(grad)
+    {
+       if (grad.gradestext.disabled==true)
+        grad.gradestext.disabled=false
+       else
+        grad.gradestext.disabled=true
+    }
+
+    function checkprof(profs)
+    {
+       if (profs.proftext.disabled==true)
+        profs.proftext.disabled=false
+       else
+        profs.proftext.disabled=true
+    }
+
+    function checktime(times)
+    {
+       if (times.timetext.disabled==true)
+        times.timetext.disabled=false
+       else
+        times.timetext.disabled=true
+    }
+
+    function checkclass(classes)
+    {
+       if (classes.classroomtext.disabled==true)
+        classes.classroomtext.disabled=false
+       else
+        classes.classroomtext.disabled=true
+    }
+    
   </script>
 </head>
 <body>

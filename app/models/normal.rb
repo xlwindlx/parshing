@@ -1,21 +1,27 @@
-require 'nokogiri'
-require 'open-uri'
-
 class Normal < ActiveRecord::Base
     validates :validation, :uniqueness => true
-    normaltable = Nokogiri::HTML(open(File.open("교양테이블.html")))
     
-    @normal = normaltable.css("table#culLctTmtblDscTbl tbody tr")
-    @normal.each do |t|
+    # 클래스 메소드 `search` 정의 
+    # def self.search(div)
+    #   Normal.where("div like ?", "%#{div}%")
+    # end
+    # def self.search(title)
+    #   Normal.where("title like ?", "%#{title}%")
+    # end
+    # def self.search(grades)
+    #   Normal.where("grades like ?", "%#{grades}%")
+    # end
+    # def self.search(prof)
+    #   Normal.where("prof like ?", "%#{prof}%")
+    # end
+    # def self.search(time)
+    #   Normal.where("time like ?", "%#{time}%")
+    # end
+    # def self.search(classroom)
+    #   Normal.where("classroom like ?", "%#{classroom}%")
+    # end
     
-    Normal.create(
-        div: t.css("td")[1].text,
-        title: t.css("td.ta_l a").text.remove("(타학년 제한없음 2차때 수강가능)").remove("(타학년 제한없음, 2차때 신청가능)"),
-        grades: t.css("td")[5].text,
-        prof: t.css("td")[6].text,
-        time: t.css("td")[7].text.split("(")[0],
-        classroom: t.css("td")[7].text.remove(")").split("(")[1],
-        validation: t.css("td")[0].text
-    )
+    def self.search(col_name, q)
+      Normal.where("#{col_name} like ?", "%#{q}%")
     end
 end

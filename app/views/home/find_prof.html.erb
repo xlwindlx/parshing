@@ -1,0 +1,31 @@
+<button type="submit" onclick="location.href='/home/find_prof'">검색</button>
+<table>
+  <caption style="text-align:center;"><h2><strong>전공과목 검색</strong></h2></caption>
+  <thead>
+    <th><input type="checkbox" name="div" onclick="checkdiv(this.form)">
+          <input type="text" name="divtext" placeholder="이수구분" disabled></th>
+
+        <th><input type="checkbox" name="title" onclick="checktitle(this.form)">
+          <input type="text" name="titletext" placeholder="과목명" disabled></th>
+
+        <th><input type="checkbox" name="grades" onclick="checkgrades(this.form)">
+          <input type="text" name="gradestext" placeholder="학점" disabled></th>
+
+        <th><input type="checkbox" name="prof" onclick="checkprof(this.form)">
+          <input type="text" name="proftext" placeholder="교강사" disabled></th>
+
+        <th><input type="checkbox" name="time" onclick="checktime(this.form)">
+          <input type="text" name="timetext" placeholder="요일/시간" disabled></th>
+
+        <th><input type="checkbox" name="classroom" onclick="checkclass(this.form)">
+          <input type="text" name="classroomtext" placeholder="강의실" disabled></th>
+  </thead>
+    <!--이하 검색 결과-->
+    <tbody>
+        <td>
+            
+        </td>
+    </tbody>
+</table>
+
+<%= link_to '뒤로가기', home_index_path %>
