@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Normal < ActiveRecord::Base
     validates :validation, :uniqueness => true
     
@@ -23,5 +24,14 @@ class Normal < ActiveRecord::Base
     
     def self.search(col_name, q)
       Normal.where("#{col_name} like ?", "%#{q}%")
+=======
+
+class Normal < ActiveRecord::Base
+    validates :validation, :uniqueness => true
+
+    def self.search( q )
+      Normal.where("title like ?", "%#{q}%")
+>>>>>>> 91b95c44d39b429fd08e5253d148009335604b9e
     end
+
 end
