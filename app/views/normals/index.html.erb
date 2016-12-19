@@ -3,6 +3,7 @@
 <h2 style="text-align:center;">교양과목 시간표</h2>
 
 <table>
+  <caption><%= link_to '뒤로가기', home_index_path %></caption>
   <thead>
     <tr>
       <th>이수 구분</th>
@@ -20,21 +21,21 @@
       <tr>
         <td><%= n.div %></td>
         <td><%= n.title %></td>
-        <td style="text-align:center;"><%= n.grades %></td>
-        <td style="text-align:center;"><%= n.prof %></td>
-        <td><%= n.time %></td>
-        <td style="text-align:center;"><%= n.classroom %></td>
+        <td><%= n.grades %></td>
+        <td><%= n.prof %></td>
+        <td><%= simple_format n.time %></td>
+        <td><%= simple_format n.classroom %></td>
         <td><%= link_to '자세히 보기', n %></td>
         <td><%= link_to '수정', edit_normal_path(n) %></td>
         <td><%= link_to '삭제', n, method: :delete, data: { confirm: '삭제할까요?' } %></td>
       </tr>
     <% end %>
     <tr>
-      <td colspan="7" style="text-align:center;">
+      <td colspan="9" style="text-align:center;">
         <h2><strong><%= link_to '과목 추가하기', new_normal_path %></strong></h2>
       </td>
     </tr>
   </tbody>
 </table>
 
-<br>
+<%= link_to '뒤로가기', home_index_path %>
