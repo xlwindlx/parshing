@@ -23,57 +23,23 @@
     </thead>
     <!--이하 검색 결과-->
     <tbody>
+      <% @normals.each do |n| %>
       <tr>
-      <td>
-        <% if @divs.any? %>
-          <% @divs.each do | d | %>
-            <%= d.div %>
-          <% end %>
-        <% end %>
-      </td>
-      <td>
-        <% if @titles.any? %>
-          <% @titles.each do | t | %>
-            <%= t.title %>
-          <% end %>
-        <% end %>  
-      </td>
-      <td>
-        <% if @Grades.any? %>
-          <% @Grades.each do | g | %>
-            <%= g.grades %>
-          <% end %>
-        <% end %>  
-      </td>
-      <td>
-        <% if @profs.any? %>
-          <% @profs.each do | pf | %>
-            <%= pf.prof %>
-          <% end %>
-        <% end %>  
-      </td>
-      <td>
-        <% if @times.any? %>
-          <% @times.each do | t | %>
-            <%= t.time %>
-          <% end %>
-        <% end %>  
-      </td>
-      <td>
-        <% if @classrooms.any? %>
-          <% @classrooms.each do | c | %>
-            <%= c.classroom %>
-          <% end %>
-        <% end %>  
-      </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
+      <% end %>
       <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><%= link_to '뒤로가기', home_index_path %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to '뒤로가기', home_index_path %></td>
       </tr>
     </tbody>
   </table>
