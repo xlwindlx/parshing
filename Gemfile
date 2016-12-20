@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 gem 'simple_form'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => :development
 gem 'rails_12factor', :group => :production
 gem 'pg', :group => :production
 gem 'whenever'
@@ -19,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', :group => :development
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
