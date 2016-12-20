@@ -1,35 +1,46 @@
-<form name = "form" action = '/home/find_prof' method='get'>
+<%= form_tag controller: :home, action: :find_prof do %>
   <table>
-    <caption style="text-align:center;"><h2><strong>전공과목 검색</strong></h2></caption>
+    <caption style="text-align:center;">
+      <h2><strong>전공과목 검색</strong></h2><%= submit_tag "검색", :name => nil %>
+      </caption>
     <%= link_to '뒤로가기', home_index_path %>
     <thead>
-      <th><input type="checkbox" name="div" onclick="checkdiv(this.form)">
-          <input type="text" name="divtext" placeholder="이수구분" disabled></th>
-  
-      <th><input type="checkbox" name="title" onclick="checktitle(this.form)">
-          <input type="text" name="titletext" placeholder="과목명" disabled></th>
-  
-      <th><input type="checkbox" name="grades" onclick="checkgrades(this.form)">
-          <input type="text" name="gradestext" placeholder="학점" disabled></th>
-  
-      <th><input type="checkbox" name="subject" onclick="checksubject(this.form)">
-          <input type="text" name="subjecttext" placeholder="전공명" disabled></th>
-      
-      <th><input type="checkbox" name="grade" onclick="checkgrade(this.form)">
-          <input type="text" name="gradetext" placeholder="학년" disabled></th>
-      
-      <th><input type="checkbox" name="prof" onclick="checkprof(this.form)">
-          <input type="text" name="proftext" placeholder="교강사" disabled></th>
-  
-      <th><input type="checkbox" name="time" onclick="checktime(this.form)">
-          <input type="text" name="timetext" placeholder="요일/시간" disabled></th>
-  
-      <th><input type="checkbox" name="classroom" onclick="checkclass(this.form)">
-          <input type="text" name="classroomtext" placeholder="강의실" disabled></th>
+      <th>
+        <%= check_box_tag :div, nil, false, :onclick=> "checkdiv(this.form)" %>
+        <%= text_field_tag :divtext, nil, placeholder: "이수구분", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :subject, nil, false, :onclick=> "checksubject(this.form)"%>
+        <%= text_field_tag :subjecttext, nil, placeholder: "전공명", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :grade, nil, false, :onclick=> "checkgrade(this.form)"%>
+        <%= text_field_tag :gradetext, nil, placeholder: "학년", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :title, nil, false, :onclick=> "checktitle(this.form)" %>
+        <%= text_field_tag :titletext, nil, placeholder: "과목명", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :grades, nil, false, :onclick=> "checkgrades(this.form)" %>
+        <%= text_field_tag :gradestext, nil, placeholder: "학점", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :prof, nil, false, :onclick=> "checkprof(this.form)"%>
+        <%= text_field_tag :proftext, nil, placeholder: "교강사", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :time, nil, false, :onclick=> "checktime(this.form)"%>
+        <%= text_field_tag :timetext, nil, placeholder: "요일/시간", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :classroom, nil, false, :onclick=> "checkclass(this.form)" %>
+        <%= text_field_tag :classroomtext, nil, placeholder: "강의실", :disabled => true %>
+      </th>
     </thead>
       <!--이하 검색 결과-->
       <tbody>
-        <%= @profs.each do |f| %>
+     
         <tr>
           <td></td>
           <td></td>
@@ -40,7 +51,7 @@
           <td></td>
           <td></td>
         </tr>
-        <% end %>
+     
         <tr>
           <td></td>
           <td></td>
@@ -53,5 +64,4 @@
         </tr>
       </tbody>
   </table>
-</form>
-
+<% end %>

@@ -6,12 +6,12 @@ class HomeController < ApplicationController
   def find_normal
     
     @normals = Normal.all
-    @normals = @normals.search('div', params[:div]) if params[:div]
-    @normals = @normals.search('title', params[:title]) if params[:title]
-    @normals = @normals.search('grades', params[:grades]) if params[:grades]
-    @normals = @normals.search('prof', params[:prof]) if params[:prof]
-    @normals = @normals.search('time', params[:time]) if params[:time]
-    @normals = @normals.search('classroom', params[:classroom]) if params[:classroom]
+    @div = @normals.search('div', params[:div]) if params[:div]
+    @title = @normals.search('title', params[:title]) if params[:title]
+    @grades = @normals.search('grades', params[:grades]) if params[:grades]
+    @prof = @normals.search('prof', params[:prof]) if params[:prof]
+    @time = @normals.search('time', params[:time]) if params[:time]
+    @classroom = @normals.search('classroom', params[:classroom]) if params[:classroom]
     
     # div = params[:div]
     # @divs = []
@@ -53,14 +53,14 @@ class HomeController < ApplicationController
   def find_prof
     
     @profs = Prof.all
-    @profs = @profs.search('div', params[:div]) if params[:div]
+    # @profs = @profs.search('div', params[:div]) if params[:div]
     @profs = @profs.search('title', params[:title]) if params[:title]
-    @profs = @profs.search('grades', params[:grades]) if params[:grades]
-    @profs = @profs.search('proffesion', params[:proffesion]) if params[:proffesion]
-    @profs = @profs.search('time', params[:time]) if params[:time]
-    @profs = @profs.search('classroom', params[:classroom]) if params[:classroom]
-    @profs = @profs.search('grade', params[:grade]) if params[:grade]
-    @profs = @profs.search('subject', params[:subject]) if params[:subject]
+    # @profs = @profs.search('grades', params[:grades]) if params[:grades]
+    # @profs = @profs.search('proffesion', params[:proffesion]) if params[:proffesion]
+    # @profs = @profs.search('time', params[:time]) if params[:time]
+    # @profs = @profs.search('classroom', params[:classroom]) if params[:classroom]
+    # @profs = @profs.search('grade', params[:grade]) if params[:grade]
+    # @profs = @profs.search('subject', params[:subject]) if params[:subject]
     
   end
 end
