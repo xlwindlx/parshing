@@ -4,7 +4,6 @@
       <h2><strong>교양과목 검색</strong></h2><%= submit_tag "검색", :name => nil %>
     </caption>
     <%= link_to '뒤로가기', home_index_path %>
-    
     <thead>
       <th>
         <%= check_box_tag :div, nil, false, :onclick=> "checkdiv(this.form)" %>
@@ -33,7 +32,7 @@
     </thead>
     <!--이하 검색 결과-->
     <tbody>
-    <%=@normals.each do |n| %>
+    
       <tr>
         <td></td>
         <td></td>
@@ -42,7 +41,7 @@
         <td></td>
         <td></td>
       </tr>
-    <% end %>
+    
       <tr>
         <td></td>
         <td></td>
