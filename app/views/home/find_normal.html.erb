@@ -1,7 +1,7 @@
 <form name = "form" action = '/home/find_normal' method='get'>
   <table>
     <caption style="text-align:center;"><h2><strong>교양과목 검색</strong></h2></caption>
-    
+    <%= link_to '뒤로가기', home_index_path %>
     <thead>
       <th><input type="checkbox" name="div" onclick="checkdiv(this.form)">
           <input type="text" name="divtext" placeholder="이수구분" disabled></th>
@@ -23,6 +23,7 @@
     </thead>
     <!--이하 검색 결과-->
     <tbody>
+      <tr>
       <td>
         <% if @divs.any? %>
           <% @divs.each do | d | %>
@@ -65,12 +66,15 @@
           <% end %>
         <% end %>  
       </td>
+      </tr>
+      <tr>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td><%= link_to '뒤로가기', home_index_path %></td>
-      <td></td>
+      </tr>
     </tbody>
   </table>
 </form>
