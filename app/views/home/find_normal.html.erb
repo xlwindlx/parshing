@@ -1,4 +1,4 @@
-<%= form_tag controller: :home, action: :find_normal do %>
+<%= form_tag find_normal_path, method: :get do %>
   <table>
     <caption style="text-align:center;">
       <h2><strong>교양과목 검색</strong></h2><%= submit_tag "검색", :name => nil %>
@@ -7,41 +7,41 @@
     <thead>
       <th>
         <%= check_box_tag :div, nil, false, :onclick=> "checkdiv(this.form)" %>
-        <%= text_field_tag :divtext, nil, placeholder: "이수구분", :disabled => true %>
+        <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => true %>
       </th>
       <th>
         <%= check_box_tag :title, nil, false, :onclick=> "checktitle(this.form)" %>
-        <%= text_field_tag :titletext, nil, placeholder: "과목명", :disabled => true %>
+        <%= text_field_tag :titletext, params[:titletext], placeholder: "과목명", :disabled => true %>
       </th>
       <th>
         <%= check_box_tag :grades, nil, false, :onclick=> "checkgrades(this.form)" %>
-        <%= text_field_tag :gradestext, nil, placeholder: "학점", :disabled => true %>
+        <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => true %>
       </th>
       <th>
         <%= check_box_tag :prof, nil, false, :onclick=> "checkprof(this.form)"%>
-        <%= text_field_tag :proftext, nil, placeholder: "교강사", :disabled => true %>
+        <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => true %>
       </th>
       <th>
         <%= check_box_tag :time, nil, false, :onclick=> "checktime(this.form)"%>
-        <%= text_field_tag :timetext, nil, placeholder: "요일/시간", :disabled => true %>
+        <%= text_field_tag :timetext, params[:timetext], placeholder: "요일/시간", :disabled => true %>
       </th>
       <th>
         <%= check_box_tag :classroom, nil, false, :onclick=> "checkclass(this.form)" %>
-        <%= text_field_tag :classroomtext, nil, placeholder: "강의실", :disabled => true %>
+        <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => true %>
       </th>
     </thead>
     <!--이하 검색 결과-->
     <tbody>
-    
+      <% @normals.each do | normal | %>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= normal.div %></td>
+        <td><%= normal.title %></td>
+        <td><%= normal.grades %></td>
+        <td><%= normal.prof %></td>
+        <td><%= normal.time %></td>
+        <td><%= normal.classroom %></td>
       </tr>
-    
+      <% end %>
       <tr>
         <td></td>
         <td></td>
@@ -52,5 +52,5 @@
       </tr>
     </tbody>
   </table>
-  
+
 <% end %>
