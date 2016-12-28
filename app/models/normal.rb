@@ -25,7 +25,7 @@ class Normal < ActiveRecord::Base
       Normal.where("#{col_name} like ?", "%#{q}%")
     end
     
-    def self.search( q )
-      Normal.where("title like ?", "%#{q}%")
-    end
+    # def self.search( q )
+    #   Normal.where("title like ?", "%#{q}%")
+    # end
 end

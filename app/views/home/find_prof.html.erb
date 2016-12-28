@@ -1,57 +1,59 @@
-<%= form_tag controller: :home, action: :find_prof do %>
+<%= form_tag "/home/find_prof", method: :get do %>
   <table>
     <caption style="text-align:center;">
-      <h2><strong>전공과목 검색</strong></h2><%= submit_tag "검색", :name => nil %>
+      <h2><strong>전공과목 검색</strong></h2>
+      항목수 : <%= @profs.size %>개 | <%= submit_tag "검색", :name => nil %>
+      <%= link_to "재설정", find_normal_path %>
       </caption>
     <%= link_to '뒤로가기', home_index_path %>
     <thead>
       <th>
-        <%= check_box_tag :div, nil, false, :onclick=> "checkdiv(this.form)" %>
-        <%= text_field_tag :divtext, nil, placeholder: "이수구분", :disabled => true %>
+        <%= check_box_tag :div, 'on', params[:div], :onclick=> "checkdiv(this.form)" %>
+        <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :subject, nil, false, :onclick=> "checksubject(this.form)"%>
-        <%= text_field_tag :subjecttext, nil, placeholder: "전공명", :disabled => true %>
+        <%= check_box_tag :subject, 'on', params[:subject], :onclick=> "checksubject(this.form)"%>
+        <%= text_field_tag :subjecttext, params[:subjecttext], placeholder: "전공명", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :grade, nil, false, :onclick=> "checkgrade(this.form)"%>
-        <%= text_field_tag :gradetext, nil, placeholder: "학년", :disabled => true %>
+        <%= check_box_tag :grade, 'on', params[:grade], :onclick=> "checkgrade(this.form)"%>
+        <%= text_field_tag :gradetext, params[:gradetext], placeholder: "학년", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :title, nil, false, :onclick=> "checktitle(this.form)" %>
-        <%= text_field_tag :titletext, nil, placeholder: "과목명", :disabled => true %>
+        <%= check_box_tag :title, 'on', params[:title], :onclick=> "checktitle(this.form)" %>
+        <%= text_field_tag :titletext, params[:titletext], placeholder: "과목명", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :grades, nil, false, :onclick=> "checkgrades(this.form)" %>
-        <%= text_field_tag :gradestext, nil, placeholder: "학점", :disabled => true %>
+        <%= check_box_tag :grades, 'on', params[:grades], :onclick=> "checkgrades(this.form)" %>
+        <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :prof, nil, false, :onclick=> "checkprof(this.form)"%>
-        <%= text_field_tag :proftext, nil, placeholder: "교강사", :disabled => true %>
+        <%= check_box_tag :prof, 'on', params[:proffesion], :onclick=> "checkprof(this.form)"%>
+        <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :time, nil, false, :onclick=> "checktime(this.form)"%>
-        <%= text_field_tag :timetext, nil, placeholder: "요일/시간", :disabled => true %>
+        <%= check_box_tag :time, 'on', params[:time], :onclick=> "checktime(this.form)"%>
+        <%= text_field_tag :timetext, params[:timetext], placeholder: "요일/시간", :disabled => true %>
       </th>
       <th>
-        <%= check_box_tag :classroom, nil, false, :onclick=> "checkclass(this.form)" %>
-        <%= text_field_tag :classroomtext, nil, placeholder: "강의실", :disabled => true %>
+        <%= check_box_tag :classroom, 'on', params[:classroom], :onclick=> "checkclass(this.form)" %>
+        <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => true %>
       </th>
     </thead>
       <!--이하 검색 결과-->
       <tbody>
-     
+        <% @profs.each do |f| %> 
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= f.div %></td>
+          <td><%= f.subject %></td>
+          <td><%= f.grade %></td>
+          <td><%= f.title %></td>
+          <td><%= f.grades %></td>
+          <td><%= f.proffesion %></td>
+          <td><%= f.time %></td>
+          <td><%= f.classroom %></td>
         </tr>
-     
+        <% end %>
         <tr>
           <td></td>
           <td></td>

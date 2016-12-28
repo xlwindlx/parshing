@@ -1,4 +1,4 @@
-<!--현재시간 찍기-->
+// 현재시간 찍기
 
 setInterval("dpTime()",1000);
 function dpTime()
@@ -25,59 +25,59 @@ function dpTime()
 }
 
 // 체크박스 메소드
-function checkdiv(divs)
-{
-   if (divs.divtext.disabled==true)
+function checkdiv(divs) {
+   if (divs.divtext.disabled==true) {
       divs.divtext.disabled=false
-   else
+   } else {
     divs.divtext.disabled=true
+   }
 }
-function checktitle(titles)
-{
-   if (titles.titletext.disabled==true)
+function checktitle(titles) {
+   if (titles.titletext.disabled==true) {
     titles.titletext.disabled=false
-   else
+   }  else {
     titles.titletext.disabled=true
+   }
 }
-function checkgrades(grad)
-{
-   if (grad.gradestext.disabled==true)
+function checkgrades(grad) {
+   if (grad.gradestext.disabled==true) {
     grad.gradestext.disabled=false
-   else
+   } else {
     grad.gradestext.disabled=true
+   }
 }
-function checkprof(profs)
-{
-   if (profs.proftext.disabled==true)
+function checkprof(profs) {
+   if (profs.proftext.disabled==true) {
     profs.proftext.disabled=false
-   else
+   } else {
     profs.proftext.disabled=true
+   }
 }
-function checktime(times)
-{
-   if (times.timetext.disabled==true)
+function checktime(times) {
+   if (times.timetext.disabled==true) {
     times.timetext.disabled=false
-   else
+   } else {
     times.timetext.disabled=true
+   }
 }
-function checkclass(classes)
-{
-   if (classes.classroomtext.disabled==true)
+function checkclass(classes) {
+   if (classes.classroomtext.disabled==true) {
     classes.classroomtext.disabled=false
-   else
+   } else {
     classes.classroomtext.disabled=true
+   }
 }
-function checkgrade(grade)
-{
-   if (grade.gradetext.disabled==true)
+function checkgrade(grade) {
+   if (grade.gradetext.disabled==true) {
     grade.gradetext.disabled=false
-   else
+   } else {
     grade.gradetext.disabled=true
+   }
 }
-function checksubject(sub)
-{
-   if (sub.subjecttext.disabled==true)
+function checksubject(sub) {
+   if (sub.subjecttext.disabled==true) {
     sub.subjecttext.disabled=false
-   else
+   } else {
     sub.subjecttext.disabled=true
+   }
 }
