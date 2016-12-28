@@ -1,7 +1,7 @@
 class Normal < ActiveRecord::Base
     validates :validation, :uniqueness => true
-    
-    # 클래스 메소드 `search` 정의 
+
+    # 클래스 메소드 `search` 정의
     # def self.search(div)
     #   Normal.where("div like ?", "%#{div}%")
     # end
@@ -24,7 +24,7 @@ class Normal < ActiveRecord::Base
     def self.search(col_name, q)
       Normal.where("#{col_name} like ?", "%#{q}%")
     end
-    
+
     # def self.search( q )
     #   Normal.where("title like ?", "%#{q}%")
     # end

@@ -8,6 +8,7 @@
     <%= link_to '뒤로가기', home_index_path %>
     <thead>
       <th>
+
         <%= check_box_tag :div, 'on', params[:div], :onclick=> "checkdiv(this.form)" %>
         <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => (params[:div] == 'on' ? false : true) %>
       </th>
@@ -30,6 +31,29 @@
       <th>
         <%= check_box_tag :classroom, 'on', params[:classroom],:onclick=> "checkclass(this.form)" %>
         <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => (params[:classroom] == 'on' ? false : true) %>
+
+        <%= check_box_tag :div, nil, false, :onclick=> "checkdiv(this.form)" %>
+        <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :title, nil, false, :onclick=> "checktitle(this.form)" %>
+        <%= text_field_tag :titletext, params[:titletext], placeholder: "과목명", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :grades, nil, false, :onclick=> "checkgrades(this.form)" %>
+        <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :prof, nil, false, :onclick=> "checkprof(this.form)"%>
+        <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :time, nil, false, :onclick=> "checktime(this.form)"%>
+        <%= text_field_tag :timetext, params[:timetext], placeholder: "요일/시간", :disabled => true %>
+      </th>
+      <th>
+        <%= check_box_tag :classroom, nil, false, :onclick=> "checkclass(this.form)" %>
+        <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => true %>
       </th>
     </thead>
     <!--이하 검색 결과-->
@@ -44,7 +68,6 @@
         <td><%= normal.classroom %></td>
       </tr>
       <% end %>
-  
       <tr>
         <td></td>
         <td></td>
@@ -55,5 +78,5 @@
       </tr>
     </tbody>
   </table>
-  
+
 <% end %>
