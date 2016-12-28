@@ -25,7 +25,7 @@ class HomeController < ApplicationController
     @profs = @profs.search('proffesion', params[:proftext]) if params[:proffesion]
     @profs = @profs.search('time', params[:timetext]) if params[:time]
     @profs = @profs.search('classroom', params[:classroomtext]) if params[:classroom]
-    @profs = @profs.search('grade', params[:gradestext]) if params[:grade]
+    @profs = @profs.search('grade', params[:gradetext]) if params[:grade]
     @profs = @profs.search('subject', params[:subjecttext]) if params[:subject]
     
   end
