@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   get "home/index"
   resources :profs
   resources :normals
-  get 'home/find_normal', as: :find_normal
-  get 'home/find_prof', as: :find_prof
-  
+  get 'normals/index'
+  get 'profs/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

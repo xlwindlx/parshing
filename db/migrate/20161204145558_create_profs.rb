@@ -7,6 +7,7 @@ class CreateProfs < ActiveRecord::Migration
       t.integer :grade      #학년
       t.string :subject     #전공명
       t.string :proffesion  #교강사
+      t.string :day         #요일
       t.string :time        #시간
       t.string :classroom   #강의실
       t.string :validation  #식별자

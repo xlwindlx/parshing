@@ -21,6 +21,7 @@ if Normal.count.zero?
       title: t.css("td.ta_l a").text.remove("(타학년 제한없음 2차때 수강가능)").remove("(타학년 제한없음, 2차때 신청가능)"),
       grades: t.css("td")[5].text,
       prof: t.css("td")[6].text,
+      day: time[0],
       time: time,
       classroom: classroom,
       validation: t.css("td")[0].text
@@ -48,6 +49,7 @@ if Prof.count.zero?
           title: f.css("td.ta_l a").text,
           grades: f.css("td")[7].text,
           proffesion: f.css("td")[8].text,
+          day: time[0],
           time: time, 
           classroom: classroom, 
           grade: f.css("td")[2].text,

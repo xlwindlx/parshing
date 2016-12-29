@@ -5,6 +5,15 @@ class ProfsController < ApplicationController
   # GET /profs.json
   def index
     @profs = Prof.all
+    @profs = @profs.search('div', params[:divtext]) if params[:divtext]
+    @profs = @profs.search('title', params[:titletext]) if params[:titletext]
+    @profs = @profs.search('grades', params[:gradestext]) if params[:gradestext]
+    @profs = @profs.search('proffesion', params[:proftext]) if params[:proffesiontext]
+    @profs = @profs.search('day', params[:day]) if params[:daytext]
+    @profs = @profs.search('time', params[:timetext]) if params[:timetext]
+    @profs = @profs.search('classroom', params[:classroomtext]) if params[:classroomtext]
+    @profs = @profs.search('grade', params[:gradetext]) if params[:gradetext]
+    @profs = @profs.search('subject', params[:subjecttext]) if params[:subjecttext]
   end
 
   # GET /profs/1

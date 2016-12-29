@@ -4,6 +4,13 @@ class NormalsController < ApplicationController
   # GET /normals.json
   def index
     @normals = Normal.all
+    @normals = @normals.search('div', params[:divtext]) if params[:divtext]
+    @normals = @normals.search('title', params[:titletext]) if params[:titletext]
+    @normals = @normals.search('grades', params[:gradestext]) if params[:gradestext]
+    @normals = @normals.search('prof', params[:proftext]) if params[:proftext]
+    @normals = @normals.search('day', params[:daytext]) if params[:daytext]
+    @normals = @normals.search('time', params[:timetext]) if params[:timetext]
+    @normals = @normals.search('classroom', params[:classroomtext]) if params[:classroomtext]
   end
   
   # GET /normals/1

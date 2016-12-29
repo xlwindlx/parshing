@@ -1,19 +1,50 @@
+<%= form_tag "/profs", method: :get do %>
 <p id="notice"><%= notice %></p>
-
 <h2 style="text-align:center;">전공과목 시간표</h2>
-
 <table>
-  <caption><%= link_to '뒤로가기', home_index_path %></caption>
+  <caption style="text-align:center;">
+    항목수 : <%= @profs.size %>개 | <%= submit_tag "검색", :name => nil %>
+    <%= link_to "재설정", profs_path %>
+  </caption>
+  <%= link_to '뒤로가기', home_index_path %>
   <thead>
     <tr>
-      <th>이수 구분</th>
-      <th>과목명</th>
-      <th>학년</th>
-      <th>학점</th>
-      <th>전공명</th>
-      <th>교강사</th>
-      <th>요일/시간</th>
-      <th>강의실</th>
+      <th>
+        <%= check_box_tag :div, 'on', params[:div], :onclick=> "checkdiv(this.form)" %>
+        <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => (params[:div] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :subject, 'on', params[:subject], :onclick=> "checksubject(this.form)"%>
+        <%= text_field_tag :subjecttext, params[:subjecttext], placeholder: "전공명", :disabled => (params[:subject] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :grade, 'on', params[:grade], :onclick=> "checkgrade(this.form)"%>
+        <%= text_field_tag :gradetext, params[:gradetext], placeholder: "학년", :disabled => (params[:grade] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :title, 'on', params[:title], :onclick=> "checktitle(this.form)" %>
+        <%= text_field_tag :titletext, params[:titletext], placeholder: "과목명", :disabled => (params[:title] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :grades, 'on', params[:grades], :onclick=> "checkgrades(this.form)" %>
+        <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => (params[:grades] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :prof, 'on', params[:proffesion], :onclick=> "checkprof(this.form)"%>
+        <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => (params[:proffesion] == 'on' ? false : true) %>
+      </th>
+     <th>
+        <%= check_box_tag :day, 'on', params[:day], :onclick=> "checkday(this.form)"%>
+        <%= text_field_tag :daytext, params[:daytext], placeholder: "요일", :disabled => (params[:day] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :time, 'on', params[:time], :onclick=> "checktime(this.form)"%>
+        <%= text_field_tag :timetext, params[:timetext], placeholder: "시간", :disabled => (params[:time] == 'on' ? false : true) %>
+      </th>
+      <th>
+        <%= check_box_tag :classroom, 'on', params[:classroom], :onclick=> "checkclass(this.form)" %>
+        <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => (params[:classroom] == 'on' ? false : true) %>
+      </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,11 +53,12 @@
     <% @profs.each do |prof| %>
       <tr>
         <td><%= prof.div %></td>
-        <td><%= prof.title %></td>
-        <td style="text-align:center;"><%= prof.grade %></td>
-        <td style="text-align:center;"><%= prof.grades %></td>
         <td style="text-align:center;"><%= prof.subject %></td>
+        <td style="text-align:center;"><%= prof.grade %></td>
+        <td><%= prof.title %></td>
+        <td style="text-align:center;"><%= prof.grades %></td>
         <td style="text-align:center;"><%= prof.proffesion %></td>
+        <td><%= prof.day %></td>
         <td><%= simple_format prof.time %></td>
         <td><%= simple_format prof.classroom %></td>
         <td><%= link_to '자세히 보기', prof %></td>
@@ -35,11 +67,11 @@
       </tr>
     <% end %>
     <tr>
-      <td colspan="11" style="text-align:center;">
-        <h2><strong><%= link_to '과목 추가하기', new_normal_path %></strong></h2>
+      <td colspan="12" style="text-align:center;">
+        <h2><strong><%= link_to '과목 추가하기', new_prof_path %></strong></h2>
       </td>
     </tr>
   </tbody>
 </table>
-
+<% end %>
 <%= link_to '뒤로가기', home_index_path %>
