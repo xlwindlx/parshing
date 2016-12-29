@@ -10,18 +10,18 @@ if Normal.count.zero?
     time, classroom = [], []
     
     weekdays.each do | weekday |
-      time << weekday.scan(/(.*)\(.*\)/).flatten.join(", ")
+      time << weekday.scan(/(.*)(?:\(.*\))/).flatten.join(", ").lstrip
       classroom_tmp = weekday.scan(/.*\((.*)\)/)
       classroom << (classroom_tmp.nil? ? "" : classroom_tmp.join(", "))
     end
-    time = time.join("\n")
-    classroom = classroom.join("\n")    
+    time = time.reject{|x|x == ""}.join("\n")
+    classroom = classroom.join("\n")
     Normal.create(
       div: t.css("td")[1].text,
       title: t.css("td.ta_l a").text.remove("(타학년 제한없음 2차때 수강가능)").remove("(타학년 제한없음, 2차때 신청가능)"),
       grades: t.css("td")[5].text,
       prof: t.css("td")[6].text,
-      day: time[0],
+      day: time.split("\n").map{|day|day[0]}.join("\n"),
       time: time,
       classroom: classroom,
       validation: t.css("td")[0].text
@@ -38,18 +38,18 @@ if Prof.count.zero?
       time, classroom = [], []
       
       weekdays.each do | weekday |
-        time << weekday.scan(/(.*)\(.*\)/).flatten.join(", ")
+        time << weekday.scan(/(.*)(?:\(.*\))/).flatten.join(", ").lstrip
         classroom_tmp = weekday.scan(/.*\((.*)\)/)
         classroom << (classroom_tmp.nil? ? "" : classroom_tmp.join(", "))
       end
-      time = time.join("\n")
+      time = time.reject{|x|x == ""}.join("\n")
       classroom = classroom.join("\n")
       Prof.create(
           div: f.css("td")[3].text,
           title: f.css("td.ta_l a").text,
           grades: f.css("td")[7].text,
           proffesion: f.css("td")[8].text,
-          day: time[0],
+          day: time.split("\n").map{|day|day[0]}.join("\n"),
           time: time, 
           classroom: classroom, 
           grade: f.css("td")[2].text,
@@ -58,3 +58,17 @@ if Prof.count.zero?
       )
     end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
