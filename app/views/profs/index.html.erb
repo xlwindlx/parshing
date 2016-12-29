@@ -30,8 +30,8 @@
         <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => (params[:grades] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :prof, 'on', params[:proffesion] %>
-        <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => (params[:proffesion] == 'on' ? false : true) %>
+        <%= check_box_tag :proffesion, 'on', params[:proffesion] %>
+        <%= text_field_tag :proffesiontext, params[:proffesiontext], placeholder: "교강사", :disabled => (params[:proffesion] == 'on' ? false : true) %>
       </th>
      <th>
         <%= check_box_tag :day, 'on', params[:day] %>
