@@ -10,39 +10,39 @@
   <thead>
     <tr>
       <th>
-        <%= check_box_tag :div, 'on', params[:div], :onclick=> "checkdiv(this.form)" %>
+        <%= check_box_tag :div, 'on', params[:div], :onclick=> "check_it('div');" %>
         <%= text_field_tag :divtext, params[:divtext], placeholder: "이수구분", :disabled => (params[:div] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :subject, 'on', params[:subject], :onclick=> "checksubject(this.form)"%>
+        <%= check_box_tag :subject, 'on', params[:subject], :onclick=> "check_it('subject');"%>
         <%= text_field_tag :subjecttext, params[:subjecttext], placeholder: "전공명", :disabled => (params[:subject] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :grade, 'on', params[:grade], :onclick=> "checkgrade(this.form)"%>
+        <%= check_box_tag :grade, 'on', params[:grade], :onclick=> "check_it('grade');"%>
         <%= text_field_tag :gradetext, params[:gradetext], placeholder: "학년", :disabled => (params[:grade] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :title, 'on', params[:title], :onclick=> "checktitle(this.form)" %>
+        <%= check_box_tag :title, 'on', params[:title], :onclick=> "check_it('title');" %>
         <%= text_field_tag :titletext, params[:titletext], placeholder: "과목명", :disabled => (params[:title] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :grades, 'on', params[:grades], :onclick=> "checkgrades(this.form)" %>
+        <%= check_box_tag :grades, 'on', params[:grades], :onclick=> "check_it('grades');" %>
         <%= text_field_tag :gradestext, params[:gradestext], placeholder: "학점", :disabled => (params[:grades] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :prof, 'on', params[:proffesion], :onclick=> "checkprof(this.form)"%>
+        <%= check_box_tag :prof, 'on', params[:proffesion], :onclick=> "check_it('prof');"%>
         <%= text_field_tag :proftext, params[:proftext], placeholder: "교강사", :disabled => (params[:proffesion] == 'on' ? false : true) %>
       </th>
      <th>
-        <%= check_box_tag :day, 'on', params[:day], :onclick=> "checkday(this.form)"%>
+        <%= check_box_tag :day, 'on', params[:day], :onclick=> "check_it('day');"%>
         <%= text_field_tag :daytext, params[:daytext], placeholder: "요일", :disabled => (params[:day] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :time, 'on', params[:time], :onclick=> "checktime(this.form)"%>
+        <%= check_box_tag :time, 'on', params[:time], :onclick=> "check_it('time');"%>
         <%= text_field_tag :timetext, params[:timetext], placeholder: "시간", :disabled => (params[:time] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :classroom, 'on', params[:classroom], :onclick=> "checkclass(this.form)" %>
+        <%= check_box_tag :classroom, 'on', params[:classroom], :onclick=> "check_it('classroom');" %>
         <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => (params[:classroom] == 'on' ? false : true) %>
       </th>
       <th colspan="3"></th>

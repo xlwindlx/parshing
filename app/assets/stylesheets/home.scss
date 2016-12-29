@@ -1,24 +1,44 @@
+//table
+//{
+//  margin-left:auto;
+//  margin-right:auto;
+//  padding: 5px;
+//  text-align : center;
+//  width: 100%;
+//}
+//
+//th,td
+//{
+//  text-align : center;
+//  width: 50px;
+//  padding: 5px;
+//}
+//
+//body
+//{
+//  /*color:white;*/
+//  /*background-image: url("http://cfile236.uf.daum.net/image/2076B43F4DA9CA731471F3");*/
+//  background-repeat: no-repeat;
+//  background-size:100%;
+//}
+//tr:nth-child(even){background-color: #f2f2f2}
+
+
 table
 {
-  margin-left:auto;
-  margin-right:auto;
-  padding: 5px;
-  text-align : center;
-  width: 100%;
+  margin:auto;
+  padding:auto;
 }
-
-th,td
+th
 {
-  text-align : center;
-  width: 50px;
+  text-align:center;
+}
+th, td
+{
   padding: 5px;
 }
-
-body
+table, th, tr, td
 {
-  /*color:white;*/
-  /*background-image: url("http://cfile236.uf.daum.net/image/2076B43F4DA9CA731471F3");*/
-  background-repeat: no-repeat;
-  background-size:100%;  
+  border: 1px solid black;
 }
 tr:nth-child(even){background-color: #f2f2f2}
