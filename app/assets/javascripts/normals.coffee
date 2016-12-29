@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
+document.addEventListener 'turbolinks:load', ->
+
   check_it = (field_obj) ->
     $fieldtext = $('#' + field_obj.id + 'text')
     $field = $('#' + field_obj.id)
@@ -13,3 +14,5 @@ $ ->
 
   $("#div, #subject, #grade, #title, #grades, #prof, #day, #time, #classroom").click ->
     check_it(this)
+
+  return
