@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
-
+    # 2개의 테이블에서 해당 시간(요일,시간)의 값이 있는지 조사
+    @proftable = Prof.all
+    @normaltable = Normal.all
+    @proftable = @proftable.find()
   end
 
   def find_normal

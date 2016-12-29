@@ -28,7 +28,7 @@
         <%= text_field_tag :timetext, params[:timetext], placeholder: "요일/시간", :disabled => (params[:time] == 'on' ? false : true) %>
       </th>
       <th>
-        <%= check_box_tag :classroom, 'on', params[:classroom],:onclick=> "checkclass(this.form)" %>
+        <%= check_box_tag :classroom, 'on', params[:classroom], :onclick=> "checkclass(this.form)" %>
         <%= text_field_tag :classroomtext, params[:classroomtext], placeholder: "강의실", :disabled => (params[:classroom] == 'on' ? false : true) %>
       </th>
     </thead>
@@ -54,5 +54,4 @@
       </tr>
     </tbody>
   </table>
-
 <% end %>
