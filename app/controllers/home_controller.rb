@@ -5,10 +5,9 @@ class HomeController < ApplicationController
     @normaltable = Normal.all
     # @proftable = @proftable.find()
   end
-    # 전공/교양 모두 JS파일이 적용 안됨
-    # 전공의 경우 검색조건마다 params오류
     # heroku deploy 안됨
-    # 요일col 전공만 적용 안됨
     
     # table cell button
+    # textbox 사이즈 조절
+    # 과목 추가하기 - Create Normal 텍스트 변경
 end
