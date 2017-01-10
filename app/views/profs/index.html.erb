@@ -3,10 +3,9 @@
 <h2 style="text-align:center;">전공과목 시간표</h2>
 <table class="table table-bordered table-condensed table-striped">
   <caption style="text-align:center;">
-    항목수 : <%= @profs.size %>개 | <%= submit_tag "검색", :name => nil %>
-    <%= link_to "재설정", profs_path %>
+    항목수 : <%= @profs.size %>개 | <%= submit_tag "검색", :name => nil %> <br>
+    <%= link_to "재설정", profs_path %> | <%= link_to '뒤로가기', home_index_path %>
   </caption>
-  <%= link_to '뒤로가기', home_index_path %>
   <thead>
     <tr class="query_field">
       <th>
@@ -58,7 +57,7 @@
         <td><%= prof.title %></td>
         <td style="text-align:center;"><%= prof.grades %></td>
         <td style="text-align:center;"><%= prof.proffesion %></td>
-        <td><%= simple_format prof.day %></td>
+        <td style="text-align:center;"><%= simple_format prof.day %></td>
         <td><%= simple_format prof.time %></td>
         <td><%= simple_format prof.classroom %></td>
         <td><%= link_to fa_icon('eye'), prof %></td>
@@ -68,10 +67,10 @@
     <% end %>
     <tr>
       <td colspan="12" style="text-align:center;">
-        <h2><strong><%= link_to '과목 추가하기', new_prof_path %></strong></h2>
+        <h2><strong><%= link_to '과목 추가하기', new_prof_path %></strong></h2><br>
+        <%= link_to '뒤로가기', home_index_path %>
       </td>
     </tr>
   </tbody>
-</table>
+</tableclass>
 <% end %>
-<%= link_to '뒤로가기', home_index_path %>

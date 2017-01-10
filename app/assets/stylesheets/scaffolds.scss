@@ -18,7 +18,8 @@ pre {
   font-size: 11px;
 }
 
-a {
+a
+{
   color: #000;
 
   &:visited {
@@ -31,7 +32,8 @@ a {
   }
 }
 
-div {
+div
+{
   &.field, &.actions {
     margin-bottom: 10px;
   }

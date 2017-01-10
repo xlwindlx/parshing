@@ -1,21 +1,18 @@
-# require 'nokogiri'
-# require 'open-uri'
-
 if Normal.count.zero?
   normaltable = Nokogiri::HTML(open(File.open("교양테이블.html")))
   
   @normals = normaltable.css("table#culLctTmtblDscTbl tbody tr")
   @normals.each do |t|
-    weekdays =  t.css("td")[7].text.split("/")
-    time, classroom = [], []
-    
-    weekdays.each do | weekday |
-      time << weekday.scan(/(.*)(?:\(.*\))/).flatten.join(", ").lstrip
-      classroom_tmp = weekday.scan(/.*\((.*)\)/)
-      classroom << (classroom_tmp.nil? ? "" : classroom_tmp.join(", "))
-    end
-    time = time.reject{|x|x == ""}.join("\n")
-    classroom = classroom.join("\n")
+  weekdays =  t.css("td")[7].text.split("/")
+  time, classroom = [], []
+  
+  weekdays.each do | weekday |
+    time << weekday.scan(/(.*)(?:\(.*\))/).flatten.join(", ").lstrip
+    classroom_tmp = weekday.scan(/.*\((.*)\)/)
+    classroom << (classroom_tmp.nil? ? "" : classroom_tmp.join(", "))
+  end
+  time = time.reject{|x|x == ""}.join("\n")
+  classroom = classroom.join("\n")
     Normal.create(
       div: t.css("td")[1].text,
       title: t.css("td.ta_l a").text.remove("(타학년 제한없음 2차때 수강가능)").remove("(타학년 제한없음, 2차때 신청가능)"),
