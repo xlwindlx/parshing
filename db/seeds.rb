@@ -55,17 +55,3 @@ if Prof.count.zero?
       )
     end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
